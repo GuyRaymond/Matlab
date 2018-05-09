@@ -1,4 +1,5 @@
 function [Q,R] = myqr(A)
+% QR decomposition with the method of Householder reflections
 [m,n] = size(A);
 Q = eye(m,m);
 R = A(:,:);

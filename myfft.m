@@ -1,6 +1,7 @@
 function x = myfft(x)
   n = length(x);
   % n doit etre une puissance de 2
+  % n must be a power of 2
   if (1 < n)
       even = myfft(x(1:2:end));
       odd  = myfft(x(2:2:end));

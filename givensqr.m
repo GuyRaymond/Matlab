@@ -9,8 +9,9 @@ r = hypot(R(i,j),R(i-1,j));
 c = R(i-1,j)/r;
 s = R(i,j)/r;
 G = [c s;-s c];
-R(i-1:i,j:n) = G*R(i-1:i,j:n); 
-Q(i-1:i,:) = G*Q(i-1:i,:); 
+R(i-1:i,j:n) = G*R(i-1:i,j:n);
+Q(i-1:i,:) = G*Q(i-1:i,:);
+end
 end
 Q = transpose(Q);
 end

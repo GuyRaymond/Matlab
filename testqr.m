@@ -8,3 +8,4 @@ A2 = Q2*R2
 Q2*transpose(Q2)
 [Q3,R3] = givensqr(A) % with Givens rotations
 A3 = Q3*R3
+Q3*transpose(Q3)

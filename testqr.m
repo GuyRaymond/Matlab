@@ -13,4 +13,4 @@ Q3*transpose(Q3)
 % With get same results with <qr> and <householderqr>
 % Matlab seems to implement QR with the method of Householder reflections
 % Q3 is different than Q1 with <givensqr>, but R1 == R2 == R3
-% We have I == Q3*transpose(Q3) and A == Q3*R3 and that is what QR decomposition is about.
+% We have I == Q3*transpose(Q3), R3 is upper triangular and A == Q3*R3 and that is what QR decomposition is about.

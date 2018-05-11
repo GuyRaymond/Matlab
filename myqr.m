@@ -1,11 +1,13 @@
 function [Q,R] = myqr(A)
-% QR decomposition with the method of Householder reflections
 [m,n] = size(A);
 Q = eye(m,m);
 R = A(:,:);
-rho = -1.0;
 for k = 1:min(n-1,m)
     u = R(k:n,k);
+    rho = -1;
+    if u(1) < 0
+        rho = 1;
+    end
     a = rho*norm(u);
     u(1) = u(1) - a;
     u = u/norm(u);

@@ -1,5 +1,7 @@
 function [Q,R] = givensqr(A)
+% Draft -- not finish
 % QR decomposition with the method of Givens rotations
+[m,n] = size(A);
 Q = eye(m,m);
 R = A(:,:);
 for j = 1:n

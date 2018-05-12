@@ -4,14 +4,14 @@ function [Q,R] = givensqr(A)
 Q = eye(m,m);
 R = A(:,:);
 for j = 1:n
-for i = m:-1:j+1
-r = hypot(R(i,j),R(i-1,j));
-c = R(i-1,j)/r;
-s = R(i,j)/r;
-G = [c s;-s c];
-R(i-1:i,j:n) = G*R(i-1:i,j:n);
-Q(i-1:i,:) = G*Q(i-1:i,:);
-end
+    for i = m:-1:j+1
+        r = hypot(R(i,j),R(i-1,j));
+        c = R(i-1,j)/r;
+        s = R(i,j)/r;
+        G = [c s;-s c];
+        R(i-1:i,j:n) = G*R(i-1:i,j:n);
+        Q(i-1:i,:) = G*Q(i-1:i,:);
+    end
 end
 Q = transpose(Q);
 end

@@ -9,6 +9,6 @@ x = zeros(size(y));
 x = x(1:n);
 x(n) = z(n)/R(n,n);
 for k = n-1:-1:1
-x(k) = (z(k) - dot(R(k,k+1:n),x(k+1:n)))/ R(k,k);
+    x(k) = (z(k) - dot(R(k,k+1:n),x(k+1:n)))/ R(k,k);
 end
 end

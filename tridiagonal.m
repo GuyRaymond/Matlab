@@ -8,13 +8,13 @@ rb = b(:);
 ry = y(:);
 
 for k = 2:n
-m = a(k)/rb(k-1);
-rb(k) = rb(k) - m*c(k-1);
-ry(k) = ry(k) - m*ry(k-1);
+    m = a(k)/rb(k-1);
+    rb(k) = rb(k) - m*c(k-1);
+    ry(k) = ry(k) - m*ry(k-1);
 end
 
 x(n) = ry(n)/rb(n);
 for k = n-1:-1:1
-x(k) = (ry(k) - c(k)*x(k+1))/rb(k);
+    x(k) = (ry(k) - c(k)*x(k+1))/rb(k);
 end
 end

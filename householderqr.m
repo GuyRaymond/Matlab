@@ -9,9 +9,10 @@ for k = 1:n
     if u(1) < 0
         rho = 1;
     end
-    a = rho*norm(u);
+    nu = norm(u);
+    a = rho*nu;
     u(1) = u(1) - a;
-    u = u/norm(u);
+    u = u/nu;
     v = 2*u*transpose(u);
     R(k:m,k:n) = R(k:m,k:n) - v*R(k:m,k:n);
     if 1 == k

@@ -9,10 +9,9 @@ for k = 1:n
     if u(1) < 0
         rho = 1;
     end
-    nu = norm(u);
-    a = rho*nu;
+    a = rho*norm(u);
     u(1) = u(1) - a;
-    u = u/nu;
+    u = u/norm(u);
     v = 2*u*transpose(u);
     R(k:m,k:n) = R(k:m,k:n) - v*R(k:m,k:n);
     if 1 == k
@@ -24,4 +23,3 @@ for k = 1:n
     end
 end
 Q = transpose(Q);
-end

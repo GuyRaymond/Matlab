@@ -1,5 +1,5 @@
 function [Q,R] = householderqr(A)
-% QR de decomposition with the method of Householder reflections
+% QR decomposition with the method of Householder reflections
 [m,n] = size(A);
 Q = eye(m,m);
 R = A(:,:);
@@ -14,12 +14,6 @@ for k = 1:n
     u = u/norm(u);
     v = 2*u*transpose(u);
     R(k:m,k:n) = R(k:m,k:n) - v*R(k:m,k:n);
-    if 1 == k
-        Q(k:m,k:m) = Q(k:m,k:m) - v*Q(k:m,k:m);
-    else
-        p = k-1;
-        Q(k:m,1:p) = Q(k:m,1:p) - v*Q(k:m,1:p);
-        Q(k:m,k:m) = Q(k:m,k:m) - v*Q(k:m,k:m);
-    end
+    Q(k:m,1:m) = Q(k:m,1:m) - v*Q(k:m,1:m);
 end
 Q = transpose(Q);

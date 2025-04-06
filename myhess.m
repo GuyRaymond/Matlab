@@ -1,5 +1,5 @@
 function H = myhess(A)
-% Hessian matrix of A
+% Hessenberg matrix of A
 H = A(:);
 n = length(A);
 for k = 1:n-2
